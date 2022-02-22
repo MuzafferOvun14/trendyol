@@ -108,6 +108,9 @@ export default function PrimarySearchAppBar() {
   function loginForm(){
     history.push("/login")
   }
+  function openMainPage(){
+    history.push("/")
+  }
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -174,6 +177,7 @@ export default function PrimarySearchAppBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={(e)=>{openMainPage()}}
           >
             <MenuIcon />
           </IconButton>
