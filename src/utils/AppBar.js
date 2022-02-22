@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -103,7 +104,10 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  const history = useHistory();
+  function loginForm(){
+    history.push("/login")
+  }
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -115,7 +119,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={(e)=>{loginForm()}}>Giriş</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
