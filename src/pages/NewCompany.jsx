@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-export default function CenteredGrid() {
+export default function NewCompany() {
   const classes = useStyles();
   const history = useHistory();
   function openNewCompany(){
@@ -52,13 +52,6 @@ export default function CenteredGrid() {
              >
             Giriş
           </Button>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Link href="#" variant="body2">{"Yeni Kullanıcı oluştur"}</Link>
-        </Grid>
-        <Grid item xs={6}>
-         <Link href="" onClick={(e)=>{openNewCompany()}} variant="body2">{"Yeni Şirket oluştur"}</Link>
         </Grid>
 
       </Grid>
