@@ -16,20 +16,20 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-export default function CenteredGrid() {
+export default function NewUser() {
   const classes = useStyles();
   const history = useHistory();
-  function openNewCompany(){
-    history.push("/newCompany")
-  }
-  function openNewUser(){
-    history.push("/newUser")
-  }
+ 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <LoginCaption />
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          Yeni Kullanıcı Kayıt Formu
         </Grid>
       </Grid>
       <center>
@@ -47,21 +47,38 @@ export default function CenteredGrid() {
             name="password"
             type="password"
           />
-           <Button
+          <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="rePassword"
+            label="Şifrenizi Tekrar girin."
+            name="rePassword"
+            type="password"
+          />
+         <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="name" label="Adınız" name="name"           
+          />
+         <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="surname" label="Soyadınız" name="surname"           
+          />
+         <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="adress" label="Adres bilginiz" name="adress"           
+          />
+        <TextField  variant="outlined"  margin="normal"  fullWidth
+            id="phone"  label="Telefon numaranız" name="phone"           
+          />
+        <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="email" label="iletişim Mail adresiniz" name="email"           
+          />
+        <TextField  variant="outlined"  margin="normal"  fullWidth
+            id="website" label="Kişisel Web Sayfanız" name="website"           
+          />
+            <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
              >
-            Giriş
+            Kullanıcı Kaydını Yap
           </Button>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Link href=""  onClick={(e)=>{openNewUser()}} variant="body2">{"Yeni Kullanıcı oluştur"}</Link>
-        </Grid>
-        <Grid item xs={6}>
-         <Link href="" onClick={(e)=>{openNewCompany()}} variant="body2">{"Yeni Şirket oluştur"}</Link>
         </Grid>
 
       </Grid>

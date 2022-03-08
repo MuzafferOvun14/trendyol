@@ -19,9 +19,7 @@ const useStyles = makeStyles((theme) => ({
 export default function NewCompany() {
   const classes = useStyles();
   const history = useHistory();
-  function openNewCompany(){
-    history.push("/newCompany")
-  }
+ 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
