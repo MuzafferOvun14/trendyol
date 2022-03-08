@@ -29,6 +29,11 @@ export default function NewCompany() {
           <LoginCaption />
         </Grid>
       </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          Yeni Şirket Kayıt Formu
+        </Grid>
+      </Grid>
       <center>
       <Grid container spacing={3} xs={8}>
         <Grid item xs={12}>
@@ -44,13 +49,34 @@ export default function NewCompany() {
             name="password"
             type="password"
           />
-           <Button
+          <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="rePassword"
+            label="Şifrenizi Tekrar girin."
+            name="rePassword"
+            type="password"
+          />
+         <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="companyName" label="Şirket Adını Giriniz" name="companyName"           
+          />
+         <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="adress" label="Şirket Adres bilgisi" name="adress"           
+          />
+        <TextField  variant="outlined"  margin="normal"  fullWidth
+            id="phone"  label="Şirket Telefonu" name="phone"           
+          />
+        <TextField  variant="outlined"  margin="normal"  required  fullWidth
+            id="email" label="Şirket iletişim Mail adresi" name="email"           
+          />
+        <TextField  variant="outlined"  margin="normal"  fullWidth
+            id="website" label="Şirketinizin web sayfası" name="website"           
+          />
+            <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
              >
-            Giriş
+            Şirket Kaydını Yap
           </Button>
         </Grid>
 
