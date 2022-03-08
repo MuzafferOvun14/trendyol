@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LoginCaption from '../utils/login/loginCaption';
-import { Button, TextField } from '@material-ui/core';
+import { Button, Link, TextField } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +37,7 @@ export default function CenteredGrid() {
           />
           <TextField  variant="outlined"  margin="normal"  required  fullWidth
             id="password"
-            label="Şifrenizi giriniz."
+            label="Şifrenizi girin."
             name="password"
             type="password"
           />
@@ -50,6 +50,14 @@ export default function CenteredGrid() {
             Giriş
           </Button>
         </Grid>
+
+        <Grid item xs={6}>
+          <Link href="#" variant="body2">{"Yeni Kullanıcı oluştur"}</Link>
+        </Grid>
+        <Grid item xs={6}>
+         <Link href="#" variant="body2">{"Yeni Şirket oluştur"}</Link>
+        </Grid>
+
       </Grid>
       </center>
     </div>
