@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -19,7 +19,17 @@ const useStyles = makeStyles((theme) => ({
 export default function NewUser() {
   const classes = useStyles();
   const history = useHistory();
- 
+  
+  const [username,setUsername]=useState("");
+  const [password,setPasword]=useState("");
+  const [rePassword,setRePasword]=useState("");
+  const [name,setName]=useState("");
+  const [surname,setSurname]=useState("");
+  const [adress,setAdress]=useState("");
+  const [phone,setPhone]=useState("");
+  const [email,setEmail]=useState("");
+  const [website,setWebsite]=useState("");
+
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
@@ -39,6 +49,8 @@ export default function NewUser() {
             id="username"
             label="Kullanıcı Adınız"
             name="username"
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
             autoFocus
           />
           <TextField  variant="outlined"  margin="normal"  required  fullWidth
@@ -46,30 +58,46 @@ export default function NewUser() {
             label="Şifrenizi girin."
             name="password"
             type="password"
+            value={password}
+            onChange={(e)=>setPasword(e.target.value)}
           />
           <TextField  variant="outlined"  margin="normal"  required  fullWidth
             id="rePassword"
             label="Şifrenizi Tekrar girin."
             name="rePassword"
             type="password"
+            value={rePassword}
+            onChange={(e)=>setRePasword(e.target.value)}
           />
          <TextField  variant="outlined"  margin="normal"  required  fullWidth
-            id="name" label="Adınız" name="name"           
+            id="name" label="Adınız" name="name" 
+            value={name}
+            onChange={(e)=>setName(e.target.value)}          
           />
          <TextField  variant="outlined"  margin="normal"  required  fullWidth
             id="surname" label="Soyadınız" name="surname"           
+            value={surname}
+            onChange={(e)=>setSurname(e.target.value)}
           />
          <TextField  variant="outlined"  margin="normal"  required  fullWidth
             id="adress" label="Adres bilginiz" name="adress"           
+            value={adress}
+            onChange={(e)=>setAdress(e.target.value)}
           />
         <TextField  variant="outlined"  margin="normal"  fullWidth
             id="phone"  label="Telefon numaranız" name="phone"           
-          />
+            value={phone}
+            onChange={(e)=>setPhone(e.target.value)}
+         />
         <TextField  variant="outlined"  margin="normal"  required  fullWidth
             id="email" label="iletişim Mail adresiniz" name="email"           
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
           />
         <TextField  variant="outlined"  margin="normal"  fullWidth
             id="website" label="Kişisel Web Sayfanız" name="website"           
+            value={website}
+            onChange={(e)=>setWebsite(e.target.value)}
           />
             <Button
             type="submit"
