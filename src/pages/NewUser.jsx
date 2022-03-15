@@ -29,7 +29,25 @@ export default function NewUser() {
   const [phone,setPhone]=useState("");
   const [email,setEmail]=useState("");
   const [website,setWebsite]=useState("");
+  async function recordUser(){
+    let formItems={username,password,rePassword,name,surname,adress,phone,email,website}   
+    let result=fetch("http://localhost:8080/api/users/adduser",{
+      method:'POST',
+      headers:{
+        "Content-type":"application/json",
+        "Accept":'application/json'
+      },
+      body:JSON.stringify(formItems)
+    });
+    result=await (await result).json();
+    if(result.success){
+      console.log("Kayıt Başarılı");
+    }
+    else{
+      console.log(result);
+    }
 
+  }
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
@@ -104,6 +122,7 @@ export default function NewUser() {
             fullWidth
             variant="contained"
             color="primary"
+            onClick={recordUser}
              >
             Kullanıcı Kaydını Yap
           </Button>
